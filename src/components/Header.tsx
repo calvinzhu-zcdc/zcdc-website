@@ -9,7 +9,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className='relative flex items-center justify-between p-4 bg-white shadow-md md:justify-between py-12 md:py-0'>
+    <header className='relative flex items-center justify-between p-4 bg-white shadow-md md:justify-between py-12'>
       {/* Hamburger Menu */}
       <div className='md:hidden'>
         <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
