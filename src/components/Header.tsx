@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { siteConfig } from '@/config/site'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -53,10 +54,10 @@ export default function Header() {
 
       {/* CTA */}
       <a
-        href='tel:4165551234'
+        href={`tel:${siteConfig.contact.phone}`}
         className='hidden md:inline-flex items-center rounded-md bg-sky-900 px-5 py-2 text-white font-semibold shadow hover:bg-sky-800 transition-colors text-base'
       >
-        (416) 555-1234
+        {siteConfig.contact.phone}
       </a>
 
       {/* Mobile Menu */}
@@ -76,10 +77,10 @@ export default function Header() {
               Contact
             </Link>
             <a
-              href='tel:4165551234'
+              href={`tel:${siteConfig.contact.phone}`}
               className='inline-flex items-center rounded-md bg-sky-900 px-5 py-2 text-white font-semibold shadow hover:bg-sky-800 transition-colors text-base'
             >
-              (416) 555-1234
+              {siteConfig.contact.phone}
             </a>
           </nav>
         </div>

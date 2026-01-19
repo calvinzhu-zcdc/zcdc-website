@@ -39,6 +39,8 @@ Notes: the project is a client-side/static site using the Next.js `app` router u
 - File layout: pages are `page.tsx`, not `index.tsx`. Components are default-exported React components.
 - CSS: prefer Tailwind utility classes in JSX; minimal local CSS—use `src/app/globals.css` for global styles.
 - Images: use Next.js `next/image` with `src='/images/...'` and explicit `width`/`height` attributes.
+- Configuration: site-wide configuration, including contact information, is stored in `src/config/site.ts`.
+- Client Components: components that use React hooks (e.g., `useState`) must have the `'use client'` directive at the top.
 
 ### Dependencies to be aware of
 

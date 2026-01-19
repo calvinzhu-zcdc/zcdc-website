@@ -5,6 +5,13 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import Image from 'next/image'
+import { siteConfig } from '@/config/site'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: `Contact Us | ${siteConfig.name}`,
+  description: `Get in touch with ${siteConfig.name} for a consultation.`,
+}
 
 export default function Contact() {
   return (
@@ -30,17 +37,16 @@ export default function Contact() {
               <h2 className='text-2xl font-semibold mb-4'>Get in Touch</h2>
               <ul className='space-y-2'>
                 <li>
-                  <span className='font-medium'>Address:</span> 123 Main Street, Suite 400, Toronto,
-                  ON, Canada
+                  <span className='font-medium'>Address:</span> {siteConfig.contact.address}
                 </li>
                 <li>
-                  <span className='font-medium'>Phone:</span> (416) 555-1234
+                  <span className='font-medium'>Phone:</span> {siteConfig.contact.phone}
                 </li>
                 <li>
-                  <span className='font-medium'>Email:</span> info@zcdc-cpa.ca
+                  <span className='font-medium'>Email:</span> {siteConfig.contact.email}
                 </li>
                 <li>
-                  <span className='font-medium'>Hours:</span> Mon–Fri, 9am–5pm
+                  <span className='font-medium'>Hours:</span> {siteConfig.contact.hours}
                 </li>
               </ul>
             </div>

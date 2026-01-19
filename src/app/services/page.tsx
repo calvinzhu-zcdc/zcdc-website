@@ -11,6 +11,13 @@ import {
   Calendar,
   CreditCard,
 } from 'lucide-react'
+import { Metadata } from 'next'
+import { siteConfig } from '@/config/site'
+
+export const metadata: Metadata = {
+  title: 'Services',
+  description: `Explore the professional accounting, tax, and advisory services offered by ${siteConfig.name}.`,
+}
 
 export default function Services() {
   const services = [

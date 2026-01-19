@@ -2,6 +2,13 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Metadata } from 'next'
+import { siteConfig } from '@/config/site'
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: `Learn more about ${siteConfig.name} and our commitment to excellence.`,
+}
 
 const teamMembers = [
   {
