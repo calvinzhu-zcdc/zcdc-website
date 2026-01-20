@@ -177,3 +177,59 @@ The design system is built around the concept of "quiet luxury"—understated el
 5. **Asymmetry**: Breaking the grid creates custom-designed feel
 6. **Muted Palette**: Navy and champagne over bright blues and grays
 7. **Squared Edges**: No rounded corners on major elements for modern sophistication
+
+## Responsive Design: Mobile-First
+
+All components and layouts must be fully responsive and mobile-friendly.
+
+**Mobile-First Approach:**
+
+- Design for mobile screens first, then progressively enhance for larger screens
+- Use Tailwind's responsive prefixes: `md:`, `lg:`, `xl:` for breakpoint-specific styling
+- Test all interactive elements on touch devices
+
+**Mobile Guidelines:**
+
+- Navigation: Hamburger menu on mobile (`md:hidden`), full nav on desktop
+- Typography: Smaller text sizes on mobile, scale up with `md:` and `lg:` prefixes
+  - Mobile: `text-4xl`, Desktop: `md:text-5xl` or `md:text-6xl`
+- Layouts: Stack vertically on mobile (`flex-col`), side-by-side on desktop (`lg:flex-row`)
+- Spacing: Reduce padding/margins on mobile, increase on desktop
+  - Mobile: `p-4`, Desktop: `md:p-6` or `lg:p-12`
+- Images: Full-width on mobile, constrained on desktop
+- Buttons: Full-width on mobile when appropriate, auto-width on desktop
+- Touch targets: Minimum 44px height for tappable elements
+
+**Responsive Patterns:**
+
+```tsx
+// Hero sections: vertical stack on mobile, horizontal on desktop
+<div className='flex flex-col lg:flex-row items-center gap-8 lg:gap-16'>
+
+// Typography: scale up on larger screens
+<h1 className='text-4xl md:text-5xl lg:text-6xl'>
+
+// Grids: 1 column mobile, 2-3 columns desktop
+<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+
+// Container padding: increase with screen size
+<div className='container mx-auto px-4 md:px-6 lg:px-12'>
+```
+
+**Header Specific:**
+
+- Mobile: Hamburger menu, left-aligned logo, collapsed CTA
+- Desktop: Full horizontal nav, left-aligned logo, integrated CTA with border separator
+- **Fixed positioning**: Header uses `fixed top-0 w-full z-50` to stay visible while scrolling
+- **Responsive background**: Use mobile-first approach with breakpoint-specific styling:
+  - Mobile: Solid background (`bg-background`) for readability
+  - Desktop: Glass effect (`md:bg-background/80 md:backdrop-blur-md`) for premium feel
+  - Pattern: `bg-background md:bg-background/80 md:backdrop-blur-md`
+  - **CRITICAL**: Always use `md:` prefix for desktop-only styles to ensure mobile gets solid background
+- **Mobile menu**: Full-screen overlay with **solid background** (`bg-background`) - NEVER use transparency, blur, or opacity on mobile menu
+- **Logo treatment**: Logos should NEVER have grayscale filters - always display in full color
+- **Editorial mobile style**: Serif font (text-3xl) for menu items, left-aligned layout, generous spacing
+- **Navigation typography**: Uppercase with wide tracking (`uppercase tracking-[0.12em]`) for architectural feel
+- **Font sizes**: Desktop nav uses `text-base` (16px) for optimal readability
+- **CTA integration**: Phone number separated with `border-l` instead of heavy button styling
+- **Page offset**: All pages need `pt-20` to account for fixed header height
