@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <div>
+    <div className='pt-20'>
       <Header />
       <ContactHero />
       <main>

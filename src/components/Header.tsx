@@ -3,88 +3,108 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
 import { siteConfig } from '@/config/site'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className='relative flex items-center justify-between p-4 bg-white shadow-md md:justify-between py-12 md:px-12'>
-      {/* Hamburger Menu */}
-      <div className='md:hidden'>
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+    <nav className='fixed top-0 w-full z-50 border-b border-border bg-background md:bg-background/80 md:backdrop-blur-md'>
+      <div className='container mx-auto px-6 h-20 flex items-center justify-between'>
+        {/* Logo - Left Aligned */}
+        <div className='flex-shrink-0'>
+          <Link href='/' className='block'>
+            <Image
+              src='/images/logo/zcdc_logo_transparent.png'
+              alt='ZCDC Logo'
+              width={140}
+              height={47}
+              className='h-16 w-auto transition-all duration-500'
+              priority
+            />
+          </Link>
+        </div>
+
+        {/* Desktop Navigation */}
+        <div className='hidden md:flex items-center gap-10'>
+          <Link
+            href='/about'
+            className='font-sans text-base uppercase tracking-[0.12em] font-medium text-foreground/70 hover:text-foreground transition-colors'
+          >
+            About Us
+          </Link>
+          <Link
+            href='/services'
+            className='font-sans text-base uppercase tracking-[0.12em] font-medium text-foreground/70 hover:text-foreground transition-colors'
+          >
+            Services
+          </Link>
+          <Link
+            href='/contact'
+            className='font-sans text-base uppercase tracking-[0.12em] font-medium text-foreground/70 hover:text-foreground transition-colors'
+          >
+            Contact
+          </Link>
+
+          {/* Subtle CTA with border separator */}
+          <a
+            href={`tel:${siteConfig.contact.phone}`}
+            className='flex items-center gap-2 font-sans text-base uppercase tracking-[0.12em] font-bold text-foreground border-l pl-10 border-border hover:text-primary transition-colors'
+          >
+            <Phone size={18} strokeWidth={2.5} />
+            {siteConfig.contact.phone}
+          </a>
+        </div>
+
+        {/* Mobile Toggle */}
+        <button
+          className='md:hidden text-foreground hover:text-primary transition-colors'
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label='Toggle menu'
+        >
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Logo */}
-      <div className='absolute left-1/2 -translate-x-1/2 md:static md:left-auto md:translate-x-0'>
-        <Link href='/'>
-          <Image
-            src='/images/logo/zcdc_logo_transparent.png'
-            alt='ZCDC Logo'
-            width={150}
-            height={50}
-          />
-        </Link>
-      </div>
-
-      {/* Desktop Nav */}
-      <nav className='hidden md:flex gap-16'>
-        <Link
-          href='/about'
-          className='text-gray-800 hover:underline uppercase font-semibold text-lg'
-        >
-          About Us
-        </Link>
-        <Link
-          href='/services'
-          className='text-gray-800 hover:underline uppercase font-semibold text-lg'
-        >
-          Services
-        </Link>
-        <Link
-          href='/contact'
-          className='text-gray-800 hover:underline uppercase font-semibold text-lg'
-        >
-          Contact
-        </Link>
-      </nav>
-
-      {/* CTA */}
-      <a
-        href={`tel:${siteConfig.contact.phone}`}
-        className='hidden md:inline-flex items-center rounded-md bg-sky-900 px-5 py-2 text-white font-semibold shadow hover:bg-sky-800 transition-colors text-lg'
-      >
-        {siteConfig.contact.phone}
-      </a>
-
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Editorial Style */}
       {isMenuOpen && (
-        <div className='absolute top-full left-0 w-full bg-white shadow-md md:hidden z-20'>
-          <nav className='flex flex-col items-center gap-4 p-4'>
-            <Link href='/about' className='text-gray-800 hover:underline uppercase font-semibold'>
-              About Us
-            </Link>
-            <Link
-              href='/services'
-              className='text-gray-800 hover:underline uppercase font-semibold'
-            >
-              Services
-            </Link>
-            <Link href='/contact' className='text-gray-800 hover:underline uppercase font-semibold'>
-              Contact
-            </Link>
+        <div className='fixed inset-0 top-20 bg-background z-40 md:hidden flex flex-col p-8 space-y-8 animate-in fade-in'>
+          <Link
+            href='/about'
+            className='font-serif text-3xl text-foreground border-b border-border pb-4 hover:text-primary transition-colors'
+            onClick={() => setIsMenuOpen(false)}
+          >
+            About Us
+          </Link>
+          <Link
+            href='/services'
+            className='font-serif text-3xl text-foreground border-b border-border pb-4 hover:text-primary transition-colors'
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Services
+          </Link>
+          <Link
+            href='/contact'
+            className='font-serif text-3xl text-foreground border-b border-border pb-4 hover:text-primary transition-colors'
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Contact
+          </Link>
+
+          <div className='pt-4'>
+            <p className='font-sans text-[10px] uppercase tracking-widest text-muted-foreground mb-4'>
+              Inquiries
+            </p>
             <a
               href={`tel:${siteConfig.contact.phone}`}
-              className='inline-flex items-center rounded-md bg-sky-900 px-5 py-2 text-white font-semibold shadow hover:bg-sky-800 transition-colors text-base'
+              className='font-serif text-2xl text-foreground underline decoration-border underline-offset-8 hover:text-primary transition-colors'
             >
               {siteConfig.contact.phone}
             </a>
-          </nav>
+          </div>
         </div>
       )}
-    </header>
+    </nav>
   )
 }

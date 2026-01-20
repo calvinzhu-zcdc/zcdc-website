@@ -57,7 +57,7 @@ const teamMembers = [
 
 export default function About() {
   return (
-    <div>
+    <div className='pt-20'>
       <Header />
       <section className='relative overflow-hidden pt-24 pb-32 bg-background'>
         <div className='container mx-auto px-6'>

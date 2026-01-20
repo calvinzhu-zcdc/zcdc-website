@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function Services() {
   return (
-    <div>
+    <div className='pt-20'>
       <Header />
       <ServicesHero />
 
