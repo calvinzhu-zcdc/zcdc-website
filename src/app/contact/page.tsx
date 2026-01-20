@@ -20,13 +20,15 @@ export default function Contact() {
     <div>
       <Header />
       <ContactHero />
-      <main className='mt-12'>
-        <div className='container mx-auto py-20'>
+      <main>
+        <div className='container mx-auto py-32 px-6'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch'>
             {/* Contact Form Section */}
-            <Card className='shadow-lg h-full lg:min-h-[640px]'>
+            <Card className='shadow-2xl h-full lg:min-h-[640px] border-border'>
               <CardHeader>
-                <CardTitle className='text-3xl font-bold'>Send Us a Message</CardTitle>
+                <CardTitle className='font-serif text-4xl font-light tracking-tight text-foreground'>
+                  Send Us a Message
+                </CardTitle>
               </CardHeader>
               <CardContent className='h-full'>
                 <form className='flex h-full flex-col gap-6'>
@@ -49,7 +51,7 @@ export default function Contact() {
                   <Button
                     type='submit'
                     size='lg'
-                    className='mt-auto bg-gold-500 text-white hover:bg-navy-900 hover:-translate-y-0.5 transition-all duration-200'
+                    className='mt-auto bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 rounded-none tracking-wide'
                   >
                     Send Message
                   </Button>
@@ -59,21 +61,23 @@ export default function Contact() {
 
             {/* Contact Info Section */}
             <div className='space-y-8'>
-              <Card className='shadow-lg'>
+              <Card className='shadow-2xl border-border'>
                 <CardHeader>
-                  <CardTitle className='text-3xl font-bold'>Contact Information</CardTitle>
+                  <CardTitle className='font-serif text-4xl font-light tracking-tight text-foreground'>
+                    Contact Information
+                  </CardTitle>
                 </CardHeader>
-                <CardContent className='text-gray-800 text-lg'>
-                  <ul className='space-y-4'>
+                <CardContent className='text-foreground text-lg'>
+                  <ul className='space-y-6'>
                     <li className='flex items-start'>
-                      <MapPin className='h-6 w-6 text-gold-500 mt-1 mr-4' />
+                      <MapPin className='h-6 w-6 text-accent mt-1 mr-4 flex-shrink-0' />
                       <div>
                         <span className='font-semibold'>Address:</span>
                         <p>{siteConfig.contact.address}</p>
                       </div>
                     </li>
                     <li className='flex items-center'>
-                      <Phone className='h-6 w-6 text-gold-500 mr-4' />
+                      <Phone className='h-6 w-6 text-accent mr-4 flex-shrink-0' />
                       <a
                         href={`tel:${siteConfig.contact.phone}`}
                         className='font-bold text-xl hover:underline'
@@ -82,7 +86,7 @@ export default function Contact() {
                       </a>
                     </li>
                     <li className='flex items-center'>
-                      <Mail className='h-6 w-6 text-gold-500 mr-4' />
+                      <Mail className='h-6 w-6 text-accent mr-4 flex-shrink-0' />
                       <a
                         href={`mailto:${siteConfig.contact.email}`}
                         className='font-bold text-xl hover:underline'
@@ -91,7 +95,7 @@ export default function Contact() {
                       </a>
                     </li>
                     <li className='flex items-center'>
-                      <Clock className='h-6 w-6 text-gold-500 mr-4' />
+                      <Clock className='h-6 w-6 text-accent mr-4 flex-shrink-0' />
                       <span>
                         <span className='font-semibold'>Hours:</span> {siteConfig.contact.hours}
                       </span>
@@ -99,7 +103,7 @@ export default function Contact() {
                   </ul>
                 </CardContent>
               </Card>
-              <Card className='shadow-lg'>
+              <Card className='shadow-2xl border-border'>
                 <CardContent className='p-0 rounded-lg overflow-hidden'>
                   <div className='aspect-w-16 aspect-h-9'>
                     <iframe
@@ -118,7 +122,7 @@ export default function Contact() {
                 <Button
                   asChild
                   size='lg'
-                  className='w-full sm:w-2/3 mx-auto bg-gold-500 text-black font-bold text-lg shadow-lg hover:bg-navy-900 hover:-translate-y-0.5 transition-all duration-200'
+                  className='w-full sm:w-2/3 mx-auto bg-primary text-primary-foreground font-semibold text-lg shadow-xl hover:bg-primary/90 transition-all duration-200 rounded-none tracking-wide'
                 >
                   <a
                     href='https://www.google.com/maps/dir/?api=1&destination=CN+Tower'

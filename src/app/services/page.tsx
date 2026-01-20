@@ -20,7 +20,7 @@ export default function Services() {
       <Header />
       <ServicesHero />
 
-      <main className='container mx-auto py-20'>
+      <main className='container mx-auto py-32 px-6'>
         <ServicesIntro />
         <ServicesSpotlights />
         <ServicesProcess />

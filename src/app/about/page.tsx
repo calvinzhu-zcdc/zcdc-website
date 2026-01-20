@@ -59,53 +59,76 @@ export default function About() {
   return (
     <div>
       <Header />
-      <section className='relative h-[60vh] flex items-center justify-center text-white'>
-        <Image src='/images/hero/our_team.jpg' alt='About Us Hero' fill className='object-cover' />
-        <div className='absolute inset-0 bg-black opacity-60' />
-        <div className='z-10 text-center max-w-4xl mx-auto px-4'>
-          <h1 className='text-5xl md:text-6xl font-bold'>
-            Driving Financial Integrity and Strategic Growth
-          </h1>
-          <p className='mt-4 text-xl md:text-2xl'>
-            We are a premier Canadian Chartered Professional Accounting firm dedicated to excellence
-            in regulated and accountability-driven sectors.
-          </p>
-          <div className='mt-8 flex justify-center gap-4'>
-            <Button size='lg' asChild className='px-8 py-6 text-lg'>
-              <Link href='/contact'>Schedule a Consultation</Link>
-            </Button>
-            <Button
-              size='lg'
-              variant='outline'
-              asChild
-              className='px-8 py-6 text-lg border-white text-black'
-            >
-              <Link href='/services'>View Our Services</Link>
-            </Button>
+      <section className='relative overflow-hidden pt-24 pb-32 bg-background'>
+        <div className='container mx-auto px-6'>
+          <div className='flex flex-col lg:flex-row items-center gap-16'>
+            {/* Text Block */}
+            <div className='lg:w-1/2 z-10'>
+              <h1 className='font-serif text-5xl md:text-6xl font-light leading-tight text-foreground tracking-tighter'>
+                Driving Financial <span className='italic font-normal'>Integrity</span> and
+                Strategic Growth
+              </h1>
+              <p className='mt-8 font-sans text-lg text-muted-foreground max-w-md leading-relaxed'>
+                We are a premier Canadian Chartered Professional Accounting firm dedicated to
+                excellence in regulated and accountability-driven sectors.
+              </p>
+              <div className='mt-10 flex gap-4'>
+                <Button
+                  size='lg'
+                  asChild
+                  className='bg-primary text-primary-foreground px-8 py-3 rounded-none font-sans tracking-wide hover:bg-primary/90 transition-colors'
+                >
+                  <Link href='/contact'>Schedule a Consultation</Link>
+                </Button>
+                <Button
+                  size='lg'
+                  variant='outline'
+                  asChild
+                  className='px-8 py-3 rounded-none font-sans tracking-wide border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors'
+                >
+                  <Link href='/services'>View Our Services</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Image Block */}
+            <div className='lg:w-1/2 relative'>
+              <div className='aspect-[4/3] bg-muted overflow-hidden shadow-xl'>
+                <Image
+                  src='/images/hero/our_team.jpg'
+                  alt='Our professional team'
+                  width={800}
+                  height={600}
+                  className='w-full h-full object-cover transition-all duration-700 hover:scale-105'
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
       <Mission />
-      <main className='container mx-auto py-20'>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center mx-6 md:mx-0'>
+      <main className='container mx-auto py-32 px-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-16 items-center'>
           <div>
             <Image
               src='/images/hero/calculator_paper.jpg'
               alt='Our Story'
               width={600}
               height={400}
-              className='rounded-lg shadow-lg'
+              className='shadow-xl transition-all duration-700 hover:scale-[1.02] hover:shadow-2xl'
             />
           </div>
           <div>
-            <h2 className='text-3xl font-semibold mb-4'>Our Story</h2>
-            <p className='text-gray-700 mb-4'>
+            <h2 className='font-serif text-4xl md:text-5xl font-light mb-6 text-foreground tracking-tight'>
+              Our Story
+            </h2>
+            <p className='text-foreground/80 mb-6 leading-relaxed'>
               ZCDC LLP was founded with a clear vision: to provide unparalleled financial expertise
               to organizations that operate under intense scrutiny. From non-profits and charities
               to political entities, we saw a need for a firm that not only understands the numbers
               but also the nuances of accountability.
             </p>
-            <p className='text-gray-700'>
+            <p className='text-foreground/80 leading-relaxed'>
               Our approach is built on a foundation of clear, defensible financial reporting, robust
               internal controls, and proactive compliance management. We are more than just
               accountants; we are strategic partners committed to ensuring your long-term
@@ -116,9 +139,11 @@ export default function About() {
       </main>
       <CompetitiveAdvantages />
       <CoreValues />
-      <section className='bg-gray-50 py-20'>
-        <div className='container mx-auto'>
-          <h2 className='text-4xl font-bold text-center mb-12'>Meet the Team</h2>
+      <section className='bg-muted py-32'>
+        <div className='container mx-auto px-6'>
+          <h2 className='font-serif text-4xl md:text-5xl font-light text-center mb-20 text-foreground tracking-tight'>
+            Meet the Team
+          </h2>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {teamMembers.map((member) => (
               <Card key={member.name}>
@@ -134,7 +159,7 @@ export default function About() {
                   <CardDescription className='text-center'>{member.title}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className='text-center text-gray-700'>{member.description}</p>
+                  <p className='text-center text-foreground/80'>{member.description}</p>
                 </CardContent>
               </Card>
             ))}

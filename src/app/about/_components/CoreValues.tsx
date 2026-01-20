@@ -23,24 +23,28 @@ const values = [
 
 export default function CoreValues() {
   return (
-    <section className='bg-gray-50 py-20'>
-      <div className='container mx-auto'>
-        <h2 className='text-4xl font-bold text-center mb-12'>Our Core Values</h2>
+    <section className='bg-muted py-32'>
+      <div className='container mx-auto px-6'>
+        <h2 className='font-serif text-4xl md:text-5xl font-light text-center mb-20 text-foreground tracking-tight'>
+          Our Core Values
+        </h2>
         <div className='overflow-x-auto'>
-          <table className='min-w-full bg-white border-t border-b border-gray-200'>
+          <table className='min-w-full bg-card border border-border shadow-xl'>
             <thead>
-              <tr className='bg-gray-100'>
-                <th className='text-left py-3 px-6 font-semibold text-gray-700'>Value</th>
-                <th className='text-left py-3 px-6 font-semibold text-gray-700'>
+              <tr className='bg-background'>
+                <th className='text-left py-4 px-6 font-serif text-xl font-light text-foreground tracking-tight'>
+                  Value
+                </th>
+                <th className='text-left py-4 px-6 font-serif text-xl font-light text-foreground tracking-tight'>
                   What It Means for You
                 </th>
               </tr>
             </thead>
             <tbody>
               {values.map((item) => (
-                <tr key={item.value} className='border-b border-gray-200'>
-                  <td className='py-4 px-6 font-bold text-lg text-gray-800'>{item.value}</td>
-                  <td className='py-4 px-6 text-gray-700'>{item.meaning}</td>
+                <tr key={item.value} className='border-b border-border'>
+                  <td className='py-6 px-6 font-semibold text-lg text-foreground'>{item.value}</td>
+                  <td className='py-6 px-6 text-foreground/80'>{item.meaning}</td>
                 </tr>
               ))}
             </tbody>

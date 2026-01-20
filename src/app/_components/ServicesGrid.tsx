@@ -21,10 +21,12 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section className='py-20 bg-white'>
-      <div className='container mx-auto'>
-        <h2 className='text-3xl font-bold text-center mb-12'>Services Overview</h2>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+    <section className='py-32 bg-background'>
+      <div className='container mx-auto px-6'>
+        <h2 className='font-serif text-4xl md:text-5xl font-light text-center mb-20 text-foreground tracking-tight'>
+          Services Overview
+        </h2>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-12'>
           {services.map((service) => (
             <Card key={service.title} className='text-center'>
               <CardHeader>

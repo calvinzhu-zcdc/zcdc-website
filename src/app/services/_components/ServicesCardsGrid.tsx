@@ -69,15 +69,12 @@ export default function ServicesCardsGrid() {
         {services.map((s) => {
           const Icon = s.icon
           return (
-            <div
-              key={s.title}
-              className='bg-white shadow-sm rounded-lg p-6 text-center border border-gray-100'
-            >
-              <div className='mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gray-50'>
-                <Icon className='h-10 w-10 text-sky-600' />
+            <div key={s.title} className='bg-card shadow-lg p-8 text-center border border-border'>
+              <div className='mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-muted'>
+                <Icon className='h-10 w-10 text-accent' />
               </div>
-              <h3 className='text-lg font-semibold mb-2'>{s.title}</h3>
-              <p className='text-sm text-gray-600'>{s.desc}</p>
+              <h3 className='text-lg font-semibold mb-3 text-foreground'>{s.title}</h3>
+              <p className='text-sm text-foreground/80 leading-relaxed'>{s.desc}</p>
             </div>
           )
         })}

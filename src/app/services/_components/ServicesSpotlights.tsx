@@ -3,16 +3,21 @@ import { Check } from 'lucide-react'
 
 export default function ServicesSpotlights() {
   return (
-    <section aria-labelledby='service-spotlights' className='mb-20'>
-      <h2 id='service-spotlights' className='text-3xl md:text-4xl font-bold text-center mb-10'>
+    <section aria-labelledby='service-spotlights' className='mb-32'>
+      <h2
+        id='service-spotlights'
+        className='font-serif text-4xl md:text-5xl font-light text-center mb-20 text-foreground tracking-tight'
+      >
         Solutions, Delivered with Clarity
       </h2>
 
-      <div className='space-y-14'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center'>
-          <div className='relative rounded-2xl border border-gray-100 bg-white p-8 shadow-sm overflow-hidden'>
-            <h3 className='text-2xl font-semibold mb-3'>Tax Planning & Compliance</h3>
-            <p className='text-gray-700 mb-6'>
+      <div className='space-y-20'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+          <div className='relative border border-border bg-card p-10 shadow-xl overflow-hidden'>
+            <h3 className='font-serif text-3xl font-light mb-4 text-foreground tracking-tight'>
+              Tax Planning & Compliance
+            </h3>
+            <p className='text-foreground/80 mb-8 leading-relaxed'>
               Reduce surprises, improve cash flow visibility, and keep filings defensible. We help
               you plan ahead, document decisions, and stay compliant.
             </p>
@@ -22,88 +27,92 @@ export default function ServicesSpotlights() {
                 <span>Quarterly tax projections and cash flow planning</span>
               </li>
               <li className='flex gap-3'>
-                <Check className='h-5 w-5 mt-0.5 text-gold-500' />
+                <Check className='h-5 w-5 mt-0.5 text-accent shrink-0' />
                 <span>Corporate and personal compliance support</span>
               </li>
               <li className='flex gap-3'>
-                <Check className='h-5 w-5 mt-0.5 text-gold-500' />
+                <Check className='h-5 w-5 mt-0.5 text-accent shrink-0' />
                 <span>Clear documentation for audits and stakeholders</span>
               </li>
             </ul>
           </div>
 
-          <div className='relative h-[320px] md:h-[380px] rounded-2xl overflow-hidden shadow-lg'>
+          <div className='relative h-[320px] md:h-[380px] overflow-hidden shadow-xl'>
             <Image
               src='/images/hero/calculator_paper.jpg'
               alt='Tax planning and documentation'
               fill
-              className='object-cover'
+              className='object-cover transition-all duration-700 hover:scale-105'
             />
           </div>
         </div>
 
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center'>
-          <div className='relative h-[320px] md:h-[380px] rounded-2xl overflow-hidden shadow-lg lg:order-1'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+          <div className='relative h-[320px] md:h-[380px] overflow-hidden shadow-xl lg:order-1'>
             <Image
               src='/images/hero/coffee_laptop_table.jpg'
               alt='Modern bookkeeping and reporting'
               fill
-              className='object-cover'
+              className='object-cover transition-all duration-700 hover:scale-105'
             />
           </div>
 
-          <div className='relative rounded-2xl border border-gray-100 bg-white p-8 shadow-sm overflow-hidden lg:order-2'>
-            <h3 className='text-2xl font-semibold mb-3'>Accounting & Bookkeeping</h3>
-            <p className='text-gray-700 mb-6'>
+          <div className='relative border border-border bg-card p-10 shadow-xl overflow-hidden lg:order-2'>
+            <h3 className='font-serif text-3xl font-light mb-4 text-foreground tracking-tight'>
+              Accounting & Bookkeeping
+            </h3>
+            <p className='text-foreground/80 mb-8 leading-relaxed'>
               Consistent month-end closes, meaningful management reporting, and stronger controls.
               We build a reliable financial foundation you can operate on.
             </p>
-            <ul className='space-y-3 text-gray-700'>
+            <ul className='space-y-4 text-foreground/80'>
               <li className='flex gap-3'>
-                <Check className='h-5 w-5 mt-0.5 text-gold-500' />
+                <Check className='h-5 w-5 mt-0.5 text-accent shrink-0' />
                 <span>Monthly close, reconciliations, and variance review</span>
               </li>
               <li className='flex gap-3'>
-                <Check className='h-5 w-5 mt-0.5 text-gold-500' />
+                <Check className='h-5 w-5 mt-0.5 text-accent shrink-0' />
                 <span>Board-ready reporting packages and KPIs</span>
               </li>
               <li className='flex gap-3'>
-                <Check className='h-5 w-5 mt-0.5 text-gold-500' />
+                <Check className='h-5 w-5 mt-0.5 text-accent shrink-0' />
                 <span>Process improvement and internal controls support</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center'>
-          <div className='relative rounded-2xl border border-gray-100 bg-white p-8 shadow-sm overflow-hidden'>
-            <h3 className='text-2xl font-semibold mb-3'>Transaction Advisory</h3>
-            <p className='text-gray-700 mb-6'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
+          <div className='relative border border-border bg-card p-10 shadow-xl overflow-hidden'>
+            <h3 className='font-serif text-3xl font-light mb-4 text-foreground tracking-tight'>
+              Transaction Advisory
+            </h3>
+            <p className='text-foreground/80 mb-8 leading-relaxed'>
               When deals move fast, clarity matters. We help evaluate risk, validate numbers, and
               support stakeholder-ready decisions.
             </p>
-            <ul className='space-y-3 text-gray-700'>
+            <ul className='space-y-4 text-foreground/80'>
               <li className='flex gap-3'>
-                <Check className='h-5 w-5 mt-0.5 text-gold-500' />
+                <Check className='h-5 w-5 mt-0.5 text-accent shrink-0' />
                 <span>Due diligence support and working capital analysis</span>
               </li>
               <li className='flex gap-3'>
-                <Check className='h-5 w-5 mt-0.5 text-gold-500' />
+                <Check className='h-5 w-5 mt-0.5 text-accent shrink-0' />
                 <span>Valuation inputs and defensible assumptions</span>
               </li>
               <li className='flex gap-3'>
-                <Check className='h-5 w-5 mt-0.5 text-gold-500' />
+                <Check className='h-5 w-5 mt-0.5 text-accent shrink-0' />
                 <span>Reporting readiness and post-close integration guidance</span>
               </li>
             </ul>
           </div>
 
-          <div className='relative h-[320px] md:h-[380px] rounded-2xl overflow-hidden shadow-lg'>
+          <div className='relative h-[320px] md:h-[380px] overflow-hidden shadow-xl'>
             <Image
               src='/images/hero/thumbs_up.jpg'
               alt='Advisory support and decision-making'
               fill
-              className='object-cover'
+              className='object-cover transition-all duration-700 hover:scale-105'
             />
           </div>
         </div>
