@@ -4,6 +4,11 @@ import Image from 'next/image'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
+import Mission from '@/components/Mission'
+import CompetitiveAdvantages from './_components/CompetitiveAdvantages'
+import CoreValues from './_components/CoreValues'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -54,34 +59,63 @@ export default function About() {
   return (
     <div>
       <Header />
+      <section className='relative h-[60vh] flex items-center justify-center text-white'>
+        <Image src='/images/hero/our_team.jpg' alt='About Us Hero' fill className='object-cover' />
+        <div className='absolute inset-0 bg-black opacity-60' />
+        <div className='z-10 text-center max-w-4xl mx-auto px-4'>
+          <h1 className='text-5xl md:text-6xl font-bold'>
+            Driving Financial Integrity and Strategic Growth
+          </h1>
+          <p className='mt-4 text-xl md:text-2xl'>
+            We are a premier Canadian Chartered Professional Accounting firm dedicated to excellence
+            in regulated and accountability-driven sectors.
+          </p>
+          <div className='mt-8 flex justify-center gap-4'>
+            <Button size='lg' asChild className='px-8 py-6 text-lg'>
+              <Link href='/contact'>Schedule a Consultation</Link>
+            </Button>
+            <Button
+              size='lg'
+              variant='outline'
+              asChild
+              className='px-8 py-6 text-lg border-white text-black'
+            >
+              <Link href='/services'>View Our Services</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+      <Mission />
       <main className='container mx-auto py-20'>
-        <h1 className='text-4xl font-bold text-center mb-12'>About ZCDC LLP</h1>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center mx-6 md:mx-0'>
           <div>
             <Image
               src='/images/hero/calculator_paper.jpg'
-              alt='About Us'
+              alt='Our Story'
               width={600}
               height={400}
-              className='rounded-lg'
+              className='rounded-lg shadow-lg'
             />
           </div>
           <div>
-            <h2 className='text-2xl font-semibold mb-4'>Our Commitment to Excellence</h2>
+            <h2 className='text-3xl font-semibold mb-4'>Our Story</h2>
             <p className='text-gray-700 mb-4'>
-              ZCDC LLP is a Canadian Chartered Professional Accounting firm committed to financial
-              integrity, accountability, and regulatory excellence. We specialize in supporting
-              organizations operating in regulated, funder-dependent, or accountability-driven
-              environments, including non-profit, charitable, and political finance sectors.
+              ZCDC LLP was founded with a clear vision: to provide unparalleled financial expertise
+              to organizations that operate under intense scrutiny. From non-profits and charities
+              to political entities, we saw a need for a firm that not only understands the numbers
+              but also the nuances of accountability.
             </p>
             <p className='text-gray-700'>
-              Our approach emphasizes clear and defensible financial reporting, strong internal
-              controls and documentation, proactive compliance management, and long-term
-              organizational sustainability.
+              Our approach is built on a foundation of clear, defensible financial reporting, robust
+              internal controls, and proactive compliance management. We are more than just
+              accountants; we are strategic partners committed to ensuring your long-term
+              organizational sustainability and success.
             </p>
           </div>
         </div>
       </main>
+      <CompetitiveAdvantages />
+      <CoreValues />
       <section className='bg-gray-50 py-20'>
         <div className='container mx-auto'>
           <h2 className='text-4xl font-bold text-center mb-12'>Meet the Team</h2>

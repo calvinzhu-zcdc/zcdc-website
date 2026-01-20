@@ -10,7 +10,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className='relative flex items-center justify-between p-4 bg-white shadow-md md:justify-between py-12'>
+    <header className='relative flex items-center justify-between p-4 bg-white shadow-md md:justify-between py-12 md:px-12'>
       {/* Hamburger Menu */}
       <div className='md:hidden'>
         <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -55,7 +55,7 @@ export default function Header() {
       {/* CTA */}
       <a
         href={`tel:${siteConfig.contact.phone}`}
-        className='hidden md:inline-flex items-center rounded-md bg-sky-900 px-5 py-2 text-white font-semibold shadow hover:bg-sky-800 transition-colors text-base'
+        className='hidden md:inline-flex items-center rounded-md bg-sky-900 px-5 py-2 text-white font-semibold shadow hover:bg-sky-800 transition-colors text-lg'
       >
         {siteConfig.contact.phone}
       </a>
