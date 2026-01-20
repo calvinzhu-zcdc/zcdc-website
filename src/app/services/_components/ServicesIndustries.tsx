@@ -21,17 +21,20 @@ const industryCards = [
 
 export default function ServicesIndustries() {
   return (
-    <section aria-labelledby='industries' className='mb-10'>
-      <h2 id='industries' className='text-3xl md:text-4xl font-bold text-center mb-10'>
+    <section aria-labelledby='industries' className='mb-20'>
+      <h2
+        id='industries'
+        className='font-serif text-4xl md:text-5xl font-light text-center mb-20 text-foreground tracking-tight'
+      >
         Industry Experience That Shows
       </h2>
 
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-12'>
         {industryCards.map((card) => (
           <a
             key={card.title}
             href='/contact'
-            className='group relative overflow-hidden rounded-2xl border border-gray-100 shadow-sm'
+            className='group relative overflow-hidden border border-border shadow-xl'
           >
             <div className='absolute inset-0'>
               <Image

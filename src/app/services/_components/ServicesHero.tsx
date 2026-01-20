@@ -5,31 +5,43 @@ import { siteConfig } from '@/config/site'
 
 export default function ServicesHero() {
   return (
-    <section className='relative h-[55vh] flex items-center justify-center text-white'>
-      <Image
-        src='/images/hero/handshake.jpg'
-        alt='Professional advisory services'
-        fill
-        className='z-0 object-cover'
-        priority
-      />
-      <div className='absolute inset-0 bg-black/60 z-0' />
-      <div className='z-10 text-center max-w-4xl mx-auto px-4'>
-        <h1 className='text-5xl md:text-6xl font-bold'>
-          Financial Strategies Tailored to Your Growth
-        </h1>
-        <p className='mt-4 text-xl md:text-2xl text-white/90'>
-          Practical accounting, defensible reporting, and proactive advisory—built for organizations
-          that operate under scrutiny.
-        </p>
-        <div className='mt-8 flex justify-center'>
-          <Button
-            size='lg'
-            asChild
-            className='px-8 py-6 text-lg bg-white text-black hover:bg-white hover:-translate-y-0.5 transition-all duration-200'
-          >
-            <a href={`tel:${siteConfig.contact.phone}`}>{`Schedule a consultation`}</a>
-          </Button>
+    <section className='relative overflow-hidden pt-24 pb-32 bg-background'>
+      <div className='container mx-auto px-6'>
+        <div className='flex flex-col lg:flex-row items-center gap-16'>
+          {/* Text Block */}
+          <div className='lg:w-1/2 z-10'>
+            <h1 className='font-serif text-5xl md:text-6xl font-light leading-tight text-foreground tracking-tighter'>
+              Financial Strategies <span className='italic font-normal'>Tailored</span> to Your
+              Growth
+            </h1>
+            <p className='mt-8 font-sans text-lg text-muted-foreground max-w-md leading-relaxed'>
+              Practical accounting, defensible reporting, and proactive advisory—built for
+              organizations that operate under scrutiny.
+            </p>
+            <div className='mt-10'>
+              <Button
+                size='lg'
+                asChild
+                className='bg-primary text-primary-foreground px-8 py-3 rounded-none font-sans tracking-wide hover:bg-primary/90 transition-colors'
+              >
+                <a href={`tel:${siteConfig.contact.phone}`}>Schedule a Consultation</a>
+              </Button>
+            </div>
+          </div>
+
+          {/* Image Block */}
+          <div className='lg:w-1/2 relative'>
+            <div className='aspect-[4/3] bg-muted overflow-hidden shadow-xl'>
+              <Image
+                src='/images/hero/handshake.jpg'
+                alt='Professional advisory services'
+                width={800}
+                height={600}
+                className='w-full h-full object-cover transition-all duration-700 hover:scale-105'
+                priority
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

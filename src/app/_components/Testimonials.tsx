@@ -71,7 +71,7 @@ export default function Testimonials() {
   }, [testimonials.length])
 
   return (
-    <section className='py-20 bg-linear-to-r from-blue-900 to-blue-500 text-white'>
+    <section className='py-32 bg-primary text-primary-foreground'>
       <div className='container mx-auto px-4'>
         <div className='relative overflow-hidden'>
           <div
