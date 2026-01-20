@@ -4,9 +4,11 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
-import Image from 'next/image'
 import { siteConfig } from '@/config/site'
 import { Metadata } from 'next'
+import ContactHero from './_components/ContactHero'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: `Contact Us | ${siteConfig.name}`,
@@ -17,59 +19,118 @@ export default function Contact() {
   return (
     <div>
       <Header />
-      <main className='container mx-auto py-20'>
-        <h1 className='text-4xl font-bold text-center mb-12'>Contact Us</h1>
+      <ContactHero />
+      <main className='mt-12'>
+        <div className='container mx-auto py-20'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch'>
+            {/* Contact Form Section */}
+            <Card className='shadow-lg h-full lg:min-h-[640px]'>
+              <CardHeader>
+                <CardTitle className='text-3xl font-bold'>Send Us a Message</CardTitle>
+              </CardHeader>
+              <CardContent className='h-full'>
+                <form className='flex h-full flex-col gap-6'>
+                  <div>
+                    <Label htmlFor='name'>Name</Label>
+                    <Input id='name' placeholder='Your Name' className='mt-2' />
+                  </div>
+                  <div>
+                    <Label htmlFor='email'>Email</Label>
+                    <Input id='email' type='email' placeholder='Your Email' className='mt-2' />
+                  </div>
+                  <div className='flex flex-1 flex-col'>
+                    <Label htmlFor='message'>Message</Label>
+                    <Textarea
+                      id='message'
+                      placeholder='Your Message'
+                      className='mt-2 flex-1 resize-none'
+                    />
+                  </div>
+                  <Button
+                    type='submit'
+                    size='lg'
+                    className='mt-auto bg-gold-500 text-white hover:bg-navy-900 hover:-translate-y-0.5 transition-all duration-200'
+                  >
+                    Send Message
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
 
-        {/* Contact Info Section */}
-        <section className='mb-16 rounded-xl bg-gray-50 px-6 py-10 md:px-12'>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-10 items-center'>
-            <div className='flex justify-center'>
-              <Image
-                src='/images/hero/our_team.jpg'
-                alt='Our Team'
-                width={400}
-                height={300}
-                className='rounded-lg object-cover shadow-md'
-                priority
-              />
-            </div>
-            <div className='text-gray-800 text-lg'>
-              <h2 className='text-2xl font-semibold mb-4'>Get in Touch</h2>
-              <ul className='space-y-2'>
-                <li>
-                  <span className='font-medium'>Address:</span> {siteConfig.contact.address}
-                </li>
-                <li>
-                  <span className='font-medium'>Phone:</span> {siteConfig.contact.phone}
-                </li>
-                <li>
-                  <span className='font-medium'>Email:</span> {siteConfig.contact.email}
-                </li>
-                <li>
-                  <span className='font-medium'>Hours:</span> {siteConfig.contact.hours}
-                </li>
-              </ul>
+            {/* Contact Info Section */}
+            <div className='space-y-8'>
+              <Card className='shadow-lg'>
+                <CardHeader>
+                  <CardTitle className='text-3xl font-bold'>Contact Information</CardTitle>
+                </CardHeader>
+                <CardContent className='text-gray-800 text-lg'>
+                  <ul className='space-y-4'>
+                    <li className='flex items-start'>
+                      <MapPin className='h-6 w-6 text-gold-500 mt-1 mr-4' />
+                      <div>
+                        <span className='font-semibold'>Address:</span>
+                        <p>{siteConfig.contact.address}</p>
+                      </div>
+                    </li>
+                    <li className='flex items-center'>
+                      <Phone className='h-6 w-6 text-gold-500 mr-4' />
+                      <a
+                        href={`tel:${siteConfig.contact.phone}`}
+                        className='font-bold text-xl hover:underline'
+                      >
+                        {siteConfig.contact.phone}
+                      </a>
+                    </li>
+                    <li className='flex items-center'>
+                      <Mail className='h-6 w-6 text-gold-500 mr-4' />
+                      <a
+                        href={`mailto:${siteConfig.contact.email}`}
+                        className='font-bold text-xl hover:underline'
+                      >
+                        {siteConfig.contact.email}
+                      </a>
+                    </li>
+                    <li className='flex items-center'>
+                      <Clock className='h-6 w-6 text-gold-500 mr-4' />
+                      <span>
+                        <span className='font-semibold'>Hours:</span> {siteConfig.contact.hours}
+                      </span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              <Card className='shadow-lg'>
+                <CardContent className='p-0 rounded-lg overflow-hidden'>
+                  <div className='aspect-w-16 aspect-h-9'>
+                    <iframe
+                      src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.992259950363!2d-79.3831843845022!3d43.64256697912103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb2b2a6b0b2f%3A0x8f4d3a3c2b4b5b1e!2sCN%20Tower!5e0!3m2!1sen!2sca!4v1674236456789!5m2!1sen!2sca'
+                      width='100%'
+                      height='100%'
+                      style={{ border: 0 }}
+                      allowFullScreen={false}
+                      loading='lazy'
+                      referrerPolicy='no-referrer-when-downgrade'
+                    ></iframe>
+                  </div>
+                </CardContent>
+              </Card>
+              <div className='text-center'>
+                <Button
+                  asChild
+                  size='lg'
+                  className='w-full sm:w-2/3 mx-auto bg-gold-500 text-black font-bold text-lg shadow-lg hover:bg-navy-900 hover:-translate-y-0.5 transition-all duration-200'
+                >
+                  <a
+                    href='https://www.google.com/maps/dir/?api=1&destination=CN+Tower'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    Get Directions
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
-        </section>
-
-        {/* Contact Form Section */}
-        <div className='max-w-2xl mx-auto'>
-          <form className='grid grid-cols-1 gap-6'>
-            <div>
-              <Label htmlFor='name'>Name</Label>
-              <Input id='name' placeholder='Your Name' className='mt-2' />
-            </div>
-            <div>
-              <Label htmlFor='email'>Email</Label>
-              <Input id='email' type='email' placeholder='Your Email' className='mt-2' />
-            </div>
-            <div>
-              <Label htmlFor='message'>Message</Label>
-              <Textarea id='message' placeholder='Your Message' className='mt-2' />
-            </div>
-            <Button type='submit'>Send Message</Button>
-          </form>
         </div>
       </main>
       <Footer />

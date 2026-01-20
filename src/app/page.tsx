@@ -1,16 +1,20 @@
 import Header from '@/components/Header'
-import Hero from '@/components/Hero'
-import Features from '@/components/Features'
 import Footer from '@/components/Footer'
-import MobileCta from '@/components/MobileCta'
+import Mission from '@/components/Mission'
+import Hero from './_components/Hero'
+import Features from './_components/Features'
+import ServicesGrid from './_components/ServicesGrid'
+import Testimonials from './_components/Testimonials'
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <MobileCta />
       <main>
         <Hero />
+        <Mission />
+        <ServicesGrid />
+        <Testimonials />
         <Features />
       </main>
       <Footer />
