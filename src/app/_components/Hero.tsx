@@ -15,8 +15,10 @@ export default function Hero() {
       />
       <div className='absolute inset-0 bg-black opacity-50 z-0'></div>
       <div className='z-10 text-center'>
-        <h1 className='text-6xl font-bold'>Your Trusted Partner in Accounting</h1>
-        <p className='mt-4 text-2xl'>
+        <h1 className='font-serif text-6xl font-bold tracking-tight'>
+          Your Trusted Partner in Accounting
+        </h1>
+        <p className='font-sans mt-4 text-2xl'>
           Providing expert financial services to help your business thrive.
         </p>
         <div className='mt-8 flex justify-center gap-4'>
