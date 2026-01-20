@@ -221,7 +221,11 @@ All components and layouts must be fully responsive and mobile-friendly.
 - Mobile: Hamburger menu, left-aligned logo, collapsed CTA
 - Desktop: Full horizontal nav, left-aligned logo, integrated CTA with border separator
 - **Fixed positioning**: Header uses `fixed top-0 w-full z-50` to stay visible while scrolling
-- **Solid background**: Both desktop header and mobile menu use solid `bg-background` (no transparency or blur effects)
+- **Responsive background**: Use mobile-first approach with breakpoint-specific styling:
+  - Mobile: Solid background (`bg-background`) for readability
+  - Desktop: Glass effect (`md:bg-background/80 md:backdrop-blur-md`) for premium feel
+  - Pattern: `bg-background md:bg-background/80 md:backdrop-blur-md`
+  - **CRITICAL**: Always use `md:` prefix for desktop-only styles to ensure mobile gets solid background
 - **Mobile menu**: Full-screen overlay with **solid background** (`bg-background`) - NEVER use transparency, blur, or opacity on mobile menu
 - **Logo treatment**: Logos should NEVER have grayscale filters - always display in full color
 - **Editorial mobile style**: Serif font (text-3xl) for menu items, left-aligned layout, generous spacing
