@@ -9,7 +9,7 @@ export const siteConfig = {
     github: 'https://github.com/ryanfangk/zcdc-cpa',
   },
   contact: {
-    phone: '(416) 555-1234',
+    phone: '(647) 608-2426',
     email: 'info@zcdc.cpa',
     address: '123 Main Street, Suite 400, Toronto, ON, Canada',
     hours: 'Mon–Fri, 9am–5pm',
