@@ -60,11 +60,11 @@ export default function About() {
     <div className='pt-20'>
       <Header />
       <section className='relative overflow-hidden pt-24 pb-32 bg-background'>
-        <div className='container mx-auto px-6'>
+        <div className='container mx-auto px-4 md:px-6'>
           <div className='flex flex-col lg:flex-row items-center gap-16'>
             {/* Text Block */}
-            <div className='lg:w-1/2 z-10'>
-              <h1 className='font-serif text-5xl md:text-6xl font-light leading-tight text-foreground tracking-tighter'>
+            <div className='lg:w-1/2 z-10 w-full'>
+              <h1 className='font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-foreground tracking-tighter'>
                 Driving Financial <span className='italic font-normal'>Integrity</span> and
                 Strategic Growth
               </h1>
@@ -72,7 +72,7 @@ export default function About() {
                 We are a premier Canadian Chartered Professional Accounting firm dedicated to
                 excellence in regulated and accountability-driven sectors.
               </p>
-              <div className='mt-10 flex gap-4'>
+              <div className='mt-10 flex flex-col sm:flex-row gap-4'>
                 <Button
                   size='lg'
                   asChild
