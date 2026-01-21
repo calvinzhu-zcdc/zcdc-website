@@ -107,7 +107,7 @@ export default function Contact() {
                 <CardContent className='p-0 rounded-lg overflow-hidden'>
                   <div className='aspect-w-16 aspect-h-9'>
                     <iframe
-                      src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.992259950363!2d-79.3831843845022!3d43.64256697912103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb2b2a6b0b2f%3A0x8f4d3a3c2b4b5b1e!2sCN%20Tower!5e0!3m2!1sen!2sca!4v1674236456789!5m2!1sen!2sca'
+                      src='https://maps.google.com/maps?q=205%20Placer%20Ct%20Unit%20201%2C%20North%20York%2C%20ON%20M2H%200A9&t=&z=15&ie=UTF8&iwloc=&output=embed'
                       width='100%'
                       height='100%'
                       style={{ border: 0 }}
@@ -125,7 +125,7 @@ export default function Contact() {
                   className='w-full sm:w-2/3 mx-auto bg-primary text-primary-foreground font-semibold text-lg shadow-xl hover:bg-primary/90 transition-all duration-200 rounded-none tracking-wide'
                 >
                   <a
-                    href='https://www.google.com/maps/dir/?api=1&destination=CN+Tower'
+                    href='https://www.google.com/maps/dir/?api=1&destination=Unit+201,+205+Placer+Ct,+North+York,+ON+M2H+0A9'
                     target='_blank'
                     rel='noopener noreferrer'
                   >

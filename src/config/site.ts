@@ -10,8 +10,8 @@ export const siteConfig = {
   },
   contact: {
     phone: '(647) 608-2426',
-    email: 'info@zcdc.cpa',
-    address: '123 Main Street, Suite 400, Toronto, ON, Canada',
+    email: 'info@zcdcllp.com',
+    address: 'Unit 201, 205 Placer Ct, North York, ON M2H 0A9',
     hours: 'Mon–Fri, 9am–5pm',
   },
 }
