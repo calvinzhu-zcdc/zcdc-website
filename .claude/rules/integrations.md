@@ -6,6 +6,10 @@ paths:
 
 # Integrations
 
+## Package Imports
+
+- When a package provides a `/next` entry point (e.g. `@vercel/analytics/next`, `@vercel/speed-insights/next`), always import from `/next` instead of `/react` — it includes Next.js-specific optimizations.
+
 ## Contact Form
 
 - **Cloudflare Turnstile** for spam protection — client widget via `@marsidev/react-turnstile`, server-side token verification against Cloudflare's siteverify API
