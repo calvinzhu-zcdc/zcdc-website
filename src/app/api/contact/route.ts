@@ -5,6 +5,16 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
   try {
+    const requiredEnvVars = ['RESEND_API_KEY', 'RESEND_FROM_EMAIL', 'RESEND_TO_EMAIL', 'TURNSTILE_SECRET_KEY'] as const
+    const missing = requiredEnvVars.filter((key) => !process.env[key])
+    if (missing.length > 0) {
+      console.error(`Missing environment variables: ${missing.join(', ')}`)
+      return NextResponse.json(
+        { error: 'Server configuration error. Please contact the administrator.' },
+        { status: 500 }
+      )
+    }
+
     const { name, email, message, token } = await request.json()
 
     // Validate required fields
@@ -40,7 +50,7 @@ export async function POST(request: Request) {
     // Send email via Resend
     const { error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL!,
-      to: process.env.CONTACT_TO_EMAIL!,
+      to: process.env.RESEND_TO_EMAIL!,
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       html: `
