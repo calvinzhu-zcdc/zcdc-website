@@ -10,6 +10,12 @@ paths:
 
 - When a package provides a `/next` entry point (e.g. `@vercel/analytics/next`, `@vercel/speed-insights/next`), always import from `/next` instead of `/react` — it includes Next.js-specific optimizations.
 
+## API Route Clients
+
+- NEVER initialize SDK clients (Resend, Stripe, etc.) at module scope — this runs at build time when env vars aren't available and crashes the build
+- Use the **lazy singleton** pattern: declare the variable at module scope as `null`, initialize on first use via a getter function, cache for subsequent requests
+- This avoids both build-time crashes AND per-request re-initialization overhead
+
 ## Contact Form
 
 - **Cloudflare Turnstile** for spam protection — client widget via `@marsidev/react-turnstile`, server-side token verification against Cloudflare's siteverify API
