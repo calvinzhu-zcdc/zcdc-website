@@ -91,7 +91,7 @@ export default function ContactForm() {
             </Button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit(onSubmit)} className='flex h-full flex-col gap-6'>
+          <form onSubmit={(e) => handleSubmit(onSubmit)(e)} className='flex h-full flex-col gap-6'>
             <div>
               <Label htmlFor='name'>Name</Label>
               <Input
