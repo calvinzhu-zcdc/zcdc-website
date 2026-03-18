@@ -16,6 +16,8 @@ paths:
 
 ## Environment Variables
 
+Naming convention: prefix with the service name (`RESEND_`, `TURNSTILE_`). Use `NEXT_PUBLIC_` prefix only for client-exposed vars.
+
 - `NEXT_PUBLIC_TURNSTILE_SITE_KEY` — public, embedded in client
 - `TURNSTILE_SECRET_KEY` — server-only, never expose to client
 - `RESEND_API_KEY` — server-only
