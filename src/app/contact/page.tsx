@@ -1,12 +1,10 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import { Label } from '@/components/ui/label'
 import { siteConfig } from '@/config/site'
 import { Metadata } from 'next'
 import ContactHero from './_components/ContactHero'
+import ContactForm from './_components/ContactForm'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 
@@ -24,40 +22,7 @@ export default function Contact() {
         <div className='container mx-auto py-32 px-6'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch'>
             {/* Contact Form Section */}
-            <Card className='shadow-2xl h-full lg:min-h-[640px] border-border'>
-              <CardHeader>
-                <CardTitle className='font-serif text-4xl font-light tracking-tight text-foreground'>
-                  Send Us a Message
-                </CardTitle>
-              </CardHeader>
-              <CardContent className='h-full'>
-                <form className='flex h-full flex-col gap-6'>
-                  <div>
-                    <Label htmlFor='name'>Name</Label>
-                    <Input id='name' placeholder='Your Name' className='mt-2' />
-                  </div>
-                  <div>
-                    <Label htmlFor='email'>Email</Label>
-                    <Input id='email' type='email' placeholder='Your Email' className='mt-2' />
-                  </div>
-                  <div className='flex flex-1 flex-col'>
-                    <Label htmlFor='message'>Message</Label>
-                    <Textarea
-                      id='message'
-                      placeholder='Your Message'
-                      className='mt-2 flex-1 resize-none'
-                    />
-                  </div>
-                  <Button
-                    type='submit'
-                    size='lg'
-                    className='mt-auto bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 rounded-none tracking-wide'
-                  >
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            <ContactForm />
 
             {/* Contact Info Section */}
             <div className='space-y-8'>

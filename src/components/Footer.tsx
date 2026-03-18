@@ -1,5 +1,6 @@
 import { siteConfig } from '@/config/site'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -71,12 +72,12 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <div className='flex gap-8'>
-            <a href='#' className='hover:text-background transition-colors'>
+            <Link href='/privacy' className='hover:text-background transition-colors'>
               Privacy Policy
-            </a>
-            <a href='#' className='hover:text-background transition-colors'>
+            </Link>
+            <Link href='/terms' className='hover:text-background transition-colors'>
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>
